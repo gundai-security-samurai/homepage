@@ -2,20 +2,148 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-gray-200 tracking-widest;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.markdown {
+  @apply leading-normal tracking-wide break-words font-normal;
+}
+
+.markdown > * + * {
+  @apply mt-0 mb-4;
+}
+
+.markdown li {
+  @apply mt-2;
+}
+
+.markdown li > p + p {
+  @apply mt-6;
+}
+
+.markdown strong {
+  @apply font-semibold;
+}
+
+.markdown a {
+  @apply text-[#24B2FE] hover:text-[#24B2FE]/50 transition-all duration-75;
+}
+
+.markdown img + em {
+  @apply inline-flex justify-center w-full;
+}
+
+.markdown strong a {
+  @apply font-bold;
+}
+
+.markdown h2 {
+  @apply leading-tight border-b-2 text-3xl font-semibold mb-4 mt-14 pb-2 first:mt-0;
+}
+
+.markdown h3 {
+  @apply leading-tight  text-xl font-semibold mb-4 mt-6 pb-2;
+}
+
+.markdown h4 {
+  @apply leading-snug text-lg font-semibold mb-4 mt-6;
+}
+
+.markdown h5 {
+  @apply leading-none text-base font-semibold mb-4 mt-6;
+}
+
+.markdown h6 {
+  @apply leading-tight text-sm font-semibold mb-4 mt-6;
+}
+
+.markdown blockquote {
+  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+}
+
+/* .markdown code {
+  @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-1;
+} */
+
+/* .markdown pre {
+  @apply bg-gray-100 rounded p-4;
+} */
+
+.markdown pre code {
+  @apply block bg-transparent p-0 hover:scrollbar-thumb-gray-200 lg:scrollbar-thin rounded-none overflow-x-auto;
+}
+
+.markdown p code {
+  @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-1;
+}
+
+.markdown ul {
+  @apply text-base pl-6 list-disc pb-2;
+}
+
+.markdown li > ul {
+  @apply text-base pl-6 list-square;
+}
+
+.markdown li > ul > li > ul {
+  @apply text-base pl-6 list-disc;
+}
+
+.markdown li > ul > li > ul > li > ul {
+  @apply text-base pl-6 list-square;
+}
+
+.markdown ol {
+  @apply text-base pl-6 list-decimal;
+}
+
+.markdown li > ol {
+  @apply text-base pl-6 list-roman;
+}
+
+.markdown li > ol > li > ol {
+  @apply text-base pl-6 list-decimal;
+}
+
+.markdown li > ol > li > ol > li > ol {
+  @apply text-base pl-6 list-roman;
+}
+
+.markdown kbd {
+  @apply text-xs inline-block rounded border px-1 py-5 align-middle font-normal font-mono shadow;
+}
+
+.markdown table {
+  @apply text-base;
+}
+
+.markdown th {
+  @apply border py-1 px-3 bg-gray-100 border-gray-200;
+}
+
+.markdown td {
+  @apply border py-1 px-3 border-gray-200;
+}
+
+.markdown hr {
+  @apply border;
+}
+
+/* Override pygments style background color. */
+.markdown .highlight pre {
+  @apply bg-gray-100 !important;
+}
+
+@layer utilities {
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox 対応 */
+  }
+  .hidden-scrollbar::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
+    display: none;
+  }
 }
