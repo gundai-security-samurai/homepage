@@ -6,6 +6,10 @@
   * {
     @apply border-gray-200 tracking-widest;
   }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 .markdown {
