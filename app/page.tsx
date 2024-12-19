@@ -9,7 +9,7 @@ export default async function Home() {
   const blogs = await getBlogs();
   return (
     <div>
-      <Container className="w-full h-screen flex items-center justify-center">
+      <Container className="w-full h-svh flex items-center justify-center">
         <div className="w-full">
           <div className="relative h-96 mx-auto">
             <Image fill src="/logo.png" alt="hero" className="object-contain" />
