@@ -7,8 +7,13 @@ const Footer = () => {
       <Container className="space-y-8">
         <ul className="list-disc pl-6 text-2xl">
           <li>
+            <Link href="/project" className="hover:underline">
+              Project
+            </Link>
+          </li>
+          <li>
             <Link href="/members" className="hover:underline">
-              メンバー紹介
+              Member
             </Link>
           </li>
           <li>
