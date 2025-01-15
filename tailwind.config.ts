@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        matcha: "#A7E6A7",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
@@ -28,3 +29,5 @@ export default {
 
   plugins: [require("tailwind-scrollbar")],
 } satisfies Config;
+
+
